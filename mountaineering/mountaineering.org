@@ -1,0 +1,452 @@
+#+PROPERTY: LANGUAGE 0x19
+#+PROPERTY: FAMILY_ID 156
+#+PROPERTY: RESOLUTION 18
+#+PROPERTY: DRAW_ORDER 2
+
+* Полигоны
+  :PROPERTIES:
+  :TYPE:     polygon
+  :END:
+
+
+#+BEGIN_SRC typ.txt
+(highway!=* | highway=*) & name=* { name "${name}" }
+#+END_SRC
+
+** сельхозугодья
+   :PROPERTIES:
+   :DRAW_ORDER: 6
+   :OSM_SELECT: (landuse=farmland | landuse=farmyard)
+   :END:
+
+ [[file:imgs/farmland.xpm]]
+
+** промзона
+   :PROPERTIES:
+   :DRAW_ORDER: 6
+   :OSM_SELECT: landuse=industrial
+   :END:
+
+ [[file:imgs/industrial.xpm]]
+
+** карьер
+   :PROPERTIES:
+   :DRAW_ORDER: 6
+   :OSM_SELECT: landuse=quarry
+   :END:
+
+ [[file:imgs/industrial.xpm]]
+
+** аэродром
+   :PROPERTIES:
+   :DRAW_ORDER: 6
+   :OSM_SELECT: aeroway=aerodrome
+   :END:
+
+ [[file:imgs/industrial.xpm]]
+
+** кладбище
+   :PROPERTIES:
+   :DRAW_ORDER: 6
+   :OSM_SELECT: landuse=cemetery
+   :END:
+
+ [[file:imgs/cemetery.xpm]]
+
+** пром.здание
+   :PROPERTIES:
+   :DRAW_ORDER: 15
+   :OSM_SELECT: building=industrial
+   :END:
+
+ [[file:imgs/building_industrial.xpm]]
+
+** частный дом
+   :PROPERTIES:
+   :DRAW_ORDER: 15
+   :OSM_SELECT: (building=detached | building=apartments)
+   :END:
+
+[[file:imgs/building_detached.xpm]]
+
+** постройка
+   :PROPERTIES:
+   :DRAW_ORDER: 15
+   :OSM_SELECT: building=*
+   :END:
+
+[[file:imgs/building.xpm]]
+
+** луг/поле
+   :PROPERTIES:
+   :OSM_SELECT: (natural=grassland | natural=fell)
+   :DRAW_ORDER: 5
+   :END:
+
+ [[file:imgs/grassland.xpm]]
+
+** кусты
+   :PROPERTIES:
+   :OSM_SELECT: natural=scrub
+   :DRAW_ORDER: 6
+   :END:
+
+ [[file:imgs/scrub.xpm]]
+
+** посев/сенокос
+   :PROPERTIES:
+   :OSM_SELECT: landuse=meadow
+   :DRAW_ORDER: 6
+   :END:
+
+ [[file:imgs/meadow.xpm]]
+
+** болото
+   :PROPERTIES:
+   :OSM_SELECT: natural=wetland
+   :END:
+
+ [[file:imgs/wetland.xpm]]
+
+*** затопляемая территория
+    :PROPERTIES:
+    :OSM_SELECT: (natural=wetland & wetland=marsh)
+    :END:
+
+ [[file:imgs/wetland.xpm]]
+
+*** болото-болото!
+    :PROPERTIES:
+    :OSM_SELECT: (natural=wetland & wetland=swamp)
+    :END:
+
+ [[file:imgs/wetland.xpm]]
+
+** застройка
+   :PROPERTIES:
+   :OSM_SELECT: landuse=residential
+   :END:
+
+ [[file:imgs/residential.xpm]]
+
+*** сельская застройка
+    :PROPERTIES:
+    :OSM_SELECT: (landuse=residential & residential=rural)
+    :END:
+
+ [[file:imgs/residential_rural.xpm]]
+
+*** территория села
+    :PROPERTIES:
+    :OSM_SELECT: (place=village | place=hamlet)
+    :END:
+
+ [[file:imgs/place_village.xpm]]
+
+*** дачи
+    :PROPERTIES:
+    :OSM_SELECT: landuse=allotments
+    :END:
+
+ [[file:imgs/allotments.xpm]]
+
+** вода
+   :PROPERTIES:
+   :OSM_SELECT: natural=water
+   :END:
+
+ [[file:imgs/water.xpm]]
+
+*** пересыхающая вода
+    :PROPERTIES:
+    :OSM_SELECT: (intermittent=yes & natural=water)
+    :END:
+
+ [[file:imgs/water_intermittent.xpm]]
+
+*** запруда
+    :PROPERTIES:
+    :OSM_SELECT: waterway=riverbank
+    :END:
+
+ [[file:imgs/water.xpm]]
+
+** хвойный лес
+   :PROPERTIES:
+   :OSM_SELECT: ((natural=wood | landuse=forest) & leaf_type=needleleaved)
+   :DRAW_ORDER: 5
+   :END:
+
+ [[file:imgs/wood_needleleaved.xpm]]
+
+** широколиственный лес
+   :PROPERTIES:
+   :OSM_SELECT: ((natural=wood | landuse=forest) & leaf_type=broadleaved)
+   :DRAW_ORDER: 5
+   :END:
+
+ [[file:imgs/wood_broadleaved.xpm]]
+
+** лесопосадки
+   :PROPERTIES:
+   :OSM_SELECT: (landuse=plant_nursery | wood:origin=man_made)
+   :END:
+
+ [[file:imgs/wood.xpm]]
+
+** вырубки
+   :PROPERTIES:
+   :OSM_SELECT: landuse=logging
+   :END:
+
+ [[file:imgs/logging.xpm]]
+
+** лес
+   :PROPERTIES:
+   :OSM_SELECT: (natural=wood | landuse=forest)
+   :END:
+
+ [[file:imgs/wood.xpm]]
+
+** по умолчанию
+   :PROPERTIES:
+   :OSM_SELECT: (natural=* | landuse=* | place=* )
+   :DRAW_ORDER: 1
+   :END:
+
+ [[file:imgs/unknown.xpm]]
+
+* Линии
+  :PROPERTIES:
+  :TYPE:     line
+  :END:
+
+#+BEGIN_SRC typ.txt
+(highway!=* | highway=*) & name=* { name "${name}" }
+#+END_SRC
+
+** ручей
+   :PROPERTIES:
+   :DRAW_ORDER: 6
+   :OSM_SELECT: waterway=stream
+   :END:
+
+ [[file:imgs/stream.xpm]]
+
+** река
+   :PROPERTIES:
+   :DRAW_ORDER: 6
+   :OSM_SELECT: waterway=river
+   :END:
+
+ [[file:imgs/stream.xpm]]
+
+** канал
+   :PROPERTIES:
+   :DRAW_ORDER: 6
+   :OSM_SELECT: waterway=drain
+   :END:
+
+ [[file:imgs/drain.xpm]]
+
+** просека (граница землевладения)
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: (man_made=cutline & cutline=border)
+   :END:
+
+ [[file:imgs/cutline.xpm]]
+
+** квартальная просека
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: (man_made=cutline & cutline=section)
+   :END:
+
+ [[file:imgs/cutline.xpm]]
+
+** противопожарная просека
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: (man_made=cutline & cutline=firebreak)
+   :END:
+
+ [[file:imgs/cutline.xpm]]
+
+** просека
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: man_made=cutline
+   :END:
+
+ [[file:imgs/cutline.xpm]]
+
+** газопровод (подземный)
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: (man_made=pipeline & substance=gas & location=underground)
+   :END:
+
+ [[file:imgs/pipeline_gas.xpm]]
+
+** газопровод
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: (man_made=pipeline & substance=gas)
+   :END:
+
+ [[file:imgs/pipeline_gas.xpm]]
+
+** ЛЭП
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: power=line
+   :END:
+
+ [[file:imgs/power_line.xpm]]
+
+** тропа
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: highway=path
+   :END:
+
+[[file:imgs/highway_path.xpm]]
+
+** служебная дорога
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: highway=service
+   :END:
+
+[[file:imgs/highway_service.xpm]]
+
+** региональная дорога
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: highway=primary
+   :END:
+
+[[file:imgs/highway_primary.xpm]]
+
+** грунтовка
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: (highway=* & surface=ground)
+   :END:
+
+[[file:imgs/highway_ground.xpm]]
+
+** проселочная дорога
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: highway=track
+   :END:
+
+[[file:imgs/highway_ground.xpm]]
+
+** асфальтка
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: (highway=* & surface=asphalt)
+   :END:
+
+[[file:imgs/highway_asphalt.xpm]]
+
+** дорога
+   :PROPERTIES:
+   :DRAW_ORDER: 50
+   :OSM_SELECT: highway=*
+   :END:
+
+ [[file:imgs/highway.xpm]]
+
+** забор
+   :PROPERTIES:
+   :DRAW_ORDER: 60
+   :OSM_SELECT: barrier=fence
+   :END:
+
+ [[file:imgs/barrier_fence.xpm]]
+
+** ров
+   :PROPERTIES:
+   :DRAW_ORDER: 60
+   :OSM_SELECT: barrier=ditch
+   :END:
+
+ [[file:imgs/barrier_ditch.xpm]]
+
+** end
+
+#+BEGIN_SRC typ.txt
+name=* { name '${name}' }
+
+highway=* & ref=* { addlabel '${ref}' }
+highway=* & int_ref=* { addlabel '${int_ref}' }
+highway=* & nat_ref=* { addlabel '${nat_ref}' }
+highway=* & reg_ref=* { addlabel '${reg_ref}' }
+#+END_SRC
+
+* Точки
+  :PROPERTIES:
+  :TYPE:     point
+  :END:
+
+#+BEGIN_SRC typ.txt
+(highway!=* | highway=*) & name=* { name "${name}" }
+#+END_SRC
+
+** остановка с навесом
+   :PROPERTIES:
+   :GARMIN_ID: 0x2F08
+   :OSM_SELECT: (highway=bus_stop & shelter=yes)
+   :END:
+
+** остановка
+   :PROPERTIES:
+   :GARMIN_ID: 0x2F08
+   :OSM_SELECT: highway=bus_stop
+   :END:
+
+** опора ЛЭП
+   :PROPERTIES:
+   :GARMIN_ID: 0x6411
+   :RESOLUTION: 24
+   :OSM_SELECT: power=tower | power=pole
+   :END:
+
+** башня
+   :PROPERTIES:
+   :GARMIN_ID: 0x6411
+   :RESOLUTION: 23
+   :OSM_SELECT: man_made=tower
+   :END:
+
+** дерево
+   :PROPERTIES:
+   :GARMIN_ID: 0x640e
+   :RESOLUTION: 24
+   :OSM_SELECT: natural=tree
+   :END:
+
+** магазин
+   :PROPERTIES:
+   :GARMIN_ID: 0x2e00
+   :RESOLUTION: 23
+   :OSM_SELECT: shop=*
+   :END:
+
+** навес
+   :PROPERTIES:
+   :GARMIN_ID: 0x2b03
+   :RESOLUTION: 23
+   :OSM_SELECT: amenity=shelter
+   :END:
+
+** ключ (вода!)
+   :PROPERTIES:
+   :GARMIN_ID: 0x6500
+   :RESOLUTION: 18
+   :OSM_SELECT: natural=spring
+   :END:
