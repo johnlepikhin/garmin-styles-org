@@ -74,7 +74,7 @@
    :OSM_SELECT: natural=ridge
    :END:
 
- [[file:imgs/stream.xpm]]
+ [[file:imgs/ridge.xpm]]
 
 ** ручей
    :PROPERTIES:
@@ -95,7 +95,7 @@
 ** альп.маршрут
    :PROPERTIES:
    :DRAW_ORDER: 50
-   :OSM_SELECT: highway=path & mountaineering=route
+   :OSM_SELECT: (highway=path & mountaineering=route)
    :END:
 
 [[file:imgs/mountaineering_route.xpm]]
@@ -111,6 +111,9 @@
 ** end
 
 #+BEGIN_SRC typ.txt
+name=* & ele=* & rtsa_scale=* { name '${name} (${ele}, ${rtsa_scale})' }
+name=* & rtsa_scale=* { name '${name} (${rtsa_scale})' }
+name=* & ele=* { name '${name} (${ele})' }
 name=* { name '${name}' }
 
 highway=* & ref=* { addlabel '${ref}' }
@@ -128,60 +131,26 @@ highway=* & reg_ref=* { addlabel '${reg_ref}' }
 (highway!=* | highway=*) & name=* { name "${name}" }
 #+END_SRC
 
-** верошина
+** вершина
    :PROPERTIES:
-   :GARMIN_ID: 0x2F08
-   :OSM_SELECT: (highway=bus_stop & shelter=yes)
+   :GARMIN_ID: 0x6616
+   :OSM_SELECT: natural=peak
    :END:
 
-*** TODO учитывать тэг ele у перевалов и вершин
-
-** остановка
+** перевал
    :PROPERTIES:
-   :GARMIN_ID: 0x2F08
-   :OSM_SELECT: highway=bus_stop
+   :GARMIN_ID: 0x6401
+   :OSM_SELECT: mountain_pass=yes
    :END:
 
-** опора ЛЭП
+** седловина
    :PROPERTIES:
-   :GARMIN_ID: 0x6411
-   :RESOLUTION: 24
-   :OSM_SELECT: power=tower | power=pole
+   :GARMIN_ID: 0x2800
+   :OSM_SELECT: natural=saddle
    :END:
 
-** башня
+** стоянка
    :PROPERTIES:
-   :GARMIN_ID: 0x6411
-   :RESOLUTION: 23
-   :OSM_SELECT: man_made=tower
+   :GARMIN_ID: 0x4800
+   :OSM_SELECT: tourism=camp_site
    :END:
-
-** дерево
-   :PROPERTIES:
-   :GARMIN_ID: 0x640e
-   :RESOLUTION: 24
-   :OSM_SELECT: natural=tree
-   :END:
-
-** магазин
-   :PROPERTIES:
-   :GARMIN_ID: 0x2e00
-   :RESOLUTION: 23
-   :OSM_SELECT: shop=*
-   :END:
-
-** навес
-   :PROPERTIES:
-   :GARMIN_ID: 0x2b03
-   :RESOLUTION: 23
-   :OSM_SELECT: amenity=shelter
-   :END:
-
-** ключ (вода!)
-   :PROPERTIES:
-   :GARMIN_ID: 0x6500
-   :RESOLUTION: 18
-   :OSM_SELECT: natural=spring
-   :END:
-
-** TODO natural=saddle
