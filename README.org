@@ -1,0 +1,4 @@
+
+* Разные стили для mkgmap, созданные в Emacs org-mode
+
+Для генерации стиля для mkgamp из них надо использовать [[https://github.com/johnlepikhin/org-to-garmin-style]].
