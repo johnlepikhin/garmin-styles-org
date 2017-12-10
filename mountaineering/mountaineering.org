@@ -1,5 +1,5 @@
 #+PROPERTY: LANGUAGE 0x19
-#+PROPERTY: FAMILY_ID 156
+#+PROPERTY: FAMILY_ID 157
 #+PROPERTY: RESOLUTION 18
 #+PROPERTY: DRAW_ORDER 2
 
@@ -13,61 +13,13 @@
 (highway!=* | highway=*) & name=* { name "${name}" }
 #+END_SRC
 
-** сельхозугодья
+** ледник
    :PROPERTIES:
    :DRAW_ORDER: 6
-   :OSM_SELECT: (landuse=farmland | landuse=farmyard)
+   :OSM_SELECT: (natural=glacier)
    :END:
 
- [[file:imgs/farmland.xpm]]
-
-** промзона
-   :PROPERTIES:
-   :DRAW_ORDER: 6
-   :OSM_SELECT: landuse=industrial
-   :END:
-
- [[file:imgs/industrial.xpm]]
-
-** карьер
-   :PROPERTIES:
-   :DRAW_ORDER: 6
-   :OSM_SELECT: landuse=quarry
-   :END:
-
- [[file:imgs/industrial.xpm]]
-
-** аэродром
-   :PROPERTIES:
-   :DRAW_ORDER: 6
-   :OSM_SELECT: aeroway=aerodrome
-   :END:
-
- [[file:imgs/industrial.xpm]]
-
-** кладбище
-   :PROPERTIES:
-   :DRAW_ORDER: 6
-   :OSM_SELECT: landuse=cemetery
-   :END:
-
- [[file:imgs/cemetery.xpm]]
-
-** пром.здание
-   :PROPERTIES:
-   :DRAW_ORDER: 15
-   :OSM_SELECT: building=industrial
-   :END:
-
- [[file:imgs/building_industrial.xpm]]
-
-** частный дом
-   :PROPERTIES:
-   :DRAW_ORDER: 15
-   :OSM_SELECT: (building=detached | building=apartments)
-   :END:
-
-[[file:imgs/building_detached.xpm]]
+ [[file:imgs/glacier.xpm]]
 
 ** постройка
    :PROPERTIES:
@@ -93,113 +45,12 @@
 
  [[file:imgs/scrub.xpm]]
 
-** посев/сенокос
-   :PROPERTIES:
-   :OSM_SELECT: landuse=meadow
-   :DRAW_ORDER: 6
-   :END:
-
- [[file:imgs/meadow.xpm]]
-
-** болото
-   :PROPERTIES:
-   :OSM_SELECT: natural=wetland
-   :END:
-
- [[file:imgs/wetland.xpm]]
-
-*** затопляемая территория
-    :PROPERTIES:
-    :OSM_SELECT: (natural=wetland & wetland=marsh)
-    :END:
-
- [[file:imgs/wetland.xpm]]
-
-*** болото-болото!
-    :PROPERTIES:
-    :OSM_SELECT: (natural=wetland & wetland=swamp)
-    :END:
-
- [[file:imgs/wetland.xpm]]
-
-** застройка
-   :PROPERTIES:
-   :OSM_SELECT: landuse=residential
-   :END:
-
- [[file:imgs/residential.xpm]]
-
-*** сельская застройка
-    :PROPERTIES:
-    :OSM_SELECT: (landuse=residential & residential=rural)
-    :END:
-
- [[file:imgs/residential_rural.xpm]]
-
-*** территория села
-    :PROPERTIES:
-    :OSM_SELECT: (place=village | place=hamlet)
-    :END:
-
- [[file:imgs/place_village.xpm]]
-
-*** дачи
-    :PROPERTIES:
-    :OSM_SELECT: landuse=allotments
-    :END:
-
- [[file:imgs/allotments.xpm]]
-
 ** вода
    :PROPERTIES:
    :OSM_SELECT: natural=water
    :END:
 
  [[file:imgs/water.xpm]]
-
-*** пересыхающая вода
-    :PROPERTIES:
-    :OSM_SELECT: (intermittent=yes & natural=water)
-    :END:
-
- [[file:imgs/water_intermittent.xpm]]
-
-*** запруда
-    :PROPERTIES:
-    :OSM_SELECT: waterway=riverbank
-    :END:
-
- [[file:imgs/water.xpm]]
-
-** хвойный лес
-   :PROPERTIES:
-   :OSM_SELECT: ((natural=wood | landuse=forest) & leaf_type=needleleaved)
-   :DRAW_ORDER: 5
-   :END:
-
- [[file:imgs/wood_needleleaved.xpm]]
-
-** широколиственный лес
-   :PROPERTIES:
-   :OSM_SELECT: ((natural=wood | landuse=forest) & leaf_type=broadleaved)
-   :DRAW_ORDER: 5
-   :END:
-
- [[file:imgs/wood_broadleaved.xpm]]
-
-** лесопосадки
-   :PROPERTIES:
-   :OSM_SELECT: (landuse=plant_nursery | wood:origin=man_made)
-   :END:
-
- [[file:imgs/wood.xpm]]
-
-** вырубки
-   :PROPERTIES:
-   :OSM_SELECT: landuse=logging
-   :END:
-
- [[file:imgs/logging.xpm]]
 
 ** лес
    :PROPERTIES:
@@ -397,11 +248,13 @@ highway=* & reg_ref=* { addlabel '${reg_ref}' }
 (highway!=* | highway=*) & name=* { name "${name}" }
 #+END_SRC
 
-** остановка с навесом
+** верошина
    :PROPERTIES:
    :GARMIN_ID: 0x2F08
    :OSM_SELECT: (highway=bus_stop & shelter=yes)
    :END:
+
+*** TODO учитывать тэг ele у перевалов и вершин
 
 ** остановка
    :PROPERTIES:
