@@ -19,7 +19,7 @@
    :OSM_SELECT: (natural=glacier)
    :END:
 
- [[file:imgs/glacier.xpm]]
+[[file:imgs/glacier.xpm]]
 
 ** постройка
    :PROPERTIES:
