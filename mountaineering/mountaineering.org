@@ -70,7 +70,7 @@
 
 ** хребет
    :PROPERTIES:
-   :DRAW_ORDER: 6
+   :DRAW_ORDER: 20
    :OSM_SELECT: natural=ridge
    :END:
 
@@ -102,7 +102,7 @@
 
 ** тропа
    :PROPERTIES:
-   :DRAW_ORDER: 50
+   :DRAW_ORDER: 40
    :OSM_SELECT: highway=path
    :END:
 
