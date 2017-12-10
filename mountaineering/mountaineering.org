@@ -37,14 +37,6 @@
 
  [[file:imgs/grassland.xpm]]
 
-** кусты
-   :PROPERTIES:
-   :OSM_SELECT: natural=scrub
-   :DRAW_ORDER: 6
-   :END:
-
- [[file:imgs/scrub.xpm]]
-
 ** вода
    :PROPERTIES:
    :OSM_SELECT: natural=water
@@ -76,6 +68,14 @@
 (highway!=* | highway=*) & name=* { name "${name}" }
 #+END_SRC
 
+** хребет
+   :PROPERTIES:
+   :DRAW_ORDER: 6
+   :OSM_SELECT: natural=ridge
+   :END:
+
+ [[file:imgs/stream.xpm]]
+
 ** ручей
    :PROPERTIES:
    :DRAW_ORDER: 6
@@ -92,69 +92,13 @@
 
  [[file:imgs/stream.xpm]]
 
-** канал
-   :PROPERTIES:
-   :DRAW_ORDER: 6
-   :OSM_SELECT: waterway=drain
-   :END:
-
- [[file:imgs/drain.xpm]]
-
-** просека (граница землевладения)
+** альп.маршрут
    :PROPERTIES:
    :DRAW_ORDER: 50
-   :OSM_SELECT: (man_made=cutline & cutline=border)
+   :OSM_SELECT: highway=path & mountaineering=route
    :END:
 
- [[file:imgs/cutline.xpm]]
-
-** квартальная просека
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: (man_made=cutline & cutline=section)
-   :END:
-
- [[file:imgs/cutline.xpm]]
-
-** противопожарная просека
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: (man_made=cutline & cutline=firebreak)
-   :END:
-
- [[file:imgs/cutline.xpm]]
-
-** просека
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: man_made=cutline
-   :END:
-
- [[file:imgs/cutline.xpm]]
-
-** газопровод (подземный)
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: (man_made=pipeline & substance=gas & location=underground)
-   :END:
-
- [[file:imgs/pipeline_gas.xpm]]
-
-** газопровод
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: (man_made=pipeline & substance=gas)
-   :END:
-
- [[file:imgs/pipeline_gas.xpm]]
-
-** ЛЭП
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: power=line
-   :END:
-
- [[file:imgs/power_line.xpm]]
+[[file:imgs/mountaineering_route.xpm]]
 
 ** тропа
    :PROPERTIES:
@@ -163,70 +107,6 @@
    :END:
 
 [[file:imgs/highway_path.xpm]]
-
-** служебная дорога
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: highway=service
-   :END:
-
-[[file:imgs/highway_service.xpm]]
-
-** региональная дорога
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: highway=primary
-   :END:
-
-[[file:imgs/highway_primary.xpm]]
-
-** грунтовка
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: (highway=* & surface=ground)
-   :END:
-
-[[file:imgs/highway_ground.xpm]]
-
-** проселочная дорога
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: highway=track
-   :END:
-
-[[file:imgs/highway_ground.xpm]]
-
-** асфальтка
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: (highway=* & surface=asphalt)
-   :END:
-
-[[file:imgs/highway_asphalt.xpm]]
-
-** дорога
-   :PROPERTIES:
-   :DRAW_ORDER: 50
-   :OSM_SELECT: highway=*
-   :END:
-
- [[file:imgs/highway.xpm]]
-
-** забор
-   :PROPERTIES:
-   :DRAW_ORDER: 60
-   :OSM_SELECT: barrier=fence
-   :END:
-
- [[file:imgs/barrier_fence.xpm]]
-
-** ров
-   :PROPERTIES:
-   :DRAW_ORDER: 60
-   :OSM_SELECT: barrier=ditch
-   :END:
-
- [[file:imgs/barrier_ditch.xpm]]
 
 ** end
 
@@ -303,3 +183,5 @@ highway=* & reg_ref=* { addlabel '${reg_ref}' }
    :RESOLUTION: 18
    :OSM_SELECT: natural=spring
    :END:
+
+** TODO natural=saddle
