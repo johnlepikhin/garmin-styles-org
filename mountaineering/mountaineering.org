@@ -104,6 +104,7 @@
    :PROPERTIES:
    :DRAW_ORDER: 40
    :OSM_SELECT: highway=path
+   :RESOLUTION: 18
    :END:
 
 [[file:imgs/highway_path.xpm]]
