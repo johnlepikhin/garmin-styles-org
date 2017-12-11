@@ -103,6 +103,7 @@
 ** тропа
    :PROPERTIES:
    :DRAW_ORDER: 40
+   :GARMIN_ID: 0x16
    :OSM_SELECT: highway=path
    :RESOLUTION: 18
    :END:
@@ -126,7 +127,7 @@ highway=* & reg_ref=* { addlabel '${reg_ref}' }
 * Точки
   :PROPERTIES:
   :TYPE:     point
-  :RESOLUTION: 24
+  :RESOLUTION: 20
   :END:
 
 #+BEGIN_SRC typ.txt
