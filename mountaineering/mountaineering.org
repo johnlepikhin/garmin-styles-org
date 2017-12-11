@@ -126,6 +126,7 @@ highway=* & reg_ref=* { addlabel '${reg_ref}' }
 * Точки
   :PROPERTIES:
   :TYPE:     point
+  :RESOLUTION: 24
   :END:
 
 #+BEGIN_SRC typ.txt
