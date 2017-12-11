@@ -105,7 +105,7 @@
    :DRAW_ORDER: 40
    :GARMIN_ID: 0x16
    :OSM_SELECT: highway=path
-   :RESOLUTION: 18
+   :RESOLUTION: 19
    :END:
 
 [[file:imgs/highway_path.xpm]]
