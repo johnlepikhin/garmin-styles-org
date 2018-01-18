@@ -66,12 +66,16 @@
 
 #+BEGIN_SRC typ.txt
 (highway!=* | highway=*) & name=* { name "${name}" }
+
+contour=elevation | contour_ext=elevation { name '${ele|height}' }
+
 #+END_SRC
 
 ** хребет
    :PROPERTIES:
    :DRAW_ORDER: 20
    :OSM_SELECT: natural=ridge
+   :RESOLUTION: 21
    :END:
 
  [[file:imgs/ridge.xpm]]
@@ -95,6 +99,7 @@
 ** альп.маршрут
    :PROPERTIES:
    :DRAW_ORDER: 50
+   :RESOLUTION: 20
    :OSM_SELECT: (highway=path & mountaineering=route)
    :END:
 
@@ -110,12 +115,30 @@
 
 [[file:imgs/highway_path.xpm]]
 
+** горизонталь основная
+   :PROPERTIES:
+   :GARMIN_ID: 0x22
+   :OSM_SELECT: (contour=elevation & contour_ext=elevation_major)
+   :RESOLUTION: 22
+   :END:
+
+** горизонталь средняя
+   :PROPERTIES:
+   :GARMIN_ID: 0x21
+   :OSM_SELECT: (contour=elevation & contour_ext=elevation_medium)
+   :RESOLUTION: 22
+   :END:
+
+** горизонталь впомогательная
+   :PROPERTIES:
+   :GARMIN_ID: 0x20
+   :OSM_SELECT: (contour=elevation & contour_ext=elevation_minor)
+   :RESOLUTION: 23
+   :END:
+
 ** end
 
 #+BEGIN_SRC typ.txt
-name=* & ele=* & rtsa_scale=* { name '${name} (${ele}, ${rtsa_scale})' }
-name=* & rtsa_scale=* { name '${name} (${rtsa_scale})' }
-name=* & ele=* { name '${name} (${ele})' }
 name=* { name '${name}' }
 
 highway=* & ref=* { addlabel '${ref}' }
