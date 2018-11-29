@@ -67,7 +67,7 @@
 #+BEGIN_SRC typ.txt
 (highway!=* | highway=*) & name=* { name "${name}" }
 
-contour=elevation | contour_ext=elevation { name '${ele|height}' }
+contour=elevation | contour_ext=elevation { name '${ele}' | '${height}' }
 
 #+END_SRC
 
